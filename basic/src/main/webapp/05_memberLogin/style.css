@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+table{
+	border: 1px solid black;
+}
+
+td{
+	border: 1px solid black;
+}
