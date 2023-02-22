@@ -1,3 +1,4 @@
+<%@page import="kr.basic.model.MemberDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -19,25 +20,12 @@
 
 </script>
 <%
-	List<String> idList = new ArrayList<>((List<String>) session.getAttribute("idList"));
-	List<String> pwList = new ArrayList<>((List<String>) session.getAttribute("pwList"));
-	List<String> nameList = new ArrayList<>((List<String>) session.getAttribute("nameList"));
-	List<String> genderList = new ArrayList<>((List<String>) session.getAttribute("genderList"));
-
+	MemberDAO dao = MemberDAO.getInstance();
 	String pw = request.getParameter("pw");
 	int idx = (int)session.getAttribute("idx");
-	if(pwList.get(idx).equals(pw)){
+	if(dao.checkPw(pw, idx)){
 		session.removeAttribute("idx");
-  	  idList.remove(idx);
-  	  pwList.remove(idx);
-  	  nameList.remove(idx);
-  	  genderList.remove(idx);
-  	  
-  	  session.setAttribute("idList",idList );
-  	  session.setAttribute("pwList",pwList );
-  	  session.setAttribute("nameList",nameList );
-  	  session.setAttribute("genderList",genderList );
-		
+		dao.deleteMember(idx);
 		
 		%>
 	  <script> msgGo("회원탈퇴 성공" , "02_main.jsp")</script>

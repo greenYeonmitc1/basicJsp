@@ -1,3 +1,4 @@
+<%@page import="kr.basic.model.MemberDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,25 +19,17 @@
 
 </script>
 <%
-
 request.setCharacterEncoding("utf-8");
-ArrayList<String> pwList =(ArrayList<String>)session.getAttribute("pwList");
-ArrayList<String> nameList = (ArrayList<String>)session.getAttribute("nameList");
-ArrayList<String> genderList = (ArrayList<String>) session.getAttribute("genderList");
-
+MemberDAO dao = MemberDAO.getInstance();
 int idx = (int)session.getAttribute("idx");
 String pw = request.getParameter("pw");
 
-if(pwList.get(idx).equals(pw)){
+if(dao.checkPw(pw, idx)){
 	
 	String name = request.getParameter("name");
 	String gender =  request.getParameter("gender");
 	
-	nameList.set(idx, name);
-	genderList.set(idx, gender);
-	
-	session.setAttribute("nameList", nameList );
-	session.setAttribute("genderList",genderList );
+	dao.updateMember(idx, name,gender);
 	
 	%>
 	  <script> msgGo(" 회원 수정 성공" , "02_main.jsp")</script>

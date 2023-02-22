@@ -71,6 +71,13 @@ public class MemberDAO {
 	}
 	
 	// 멤버 수정 
+	public void updateMember(int idx, String name, String gender) {
+		
+		MemberVO member = list.get(idx);
+		member.setGender(gender);
+		member.setName(name);
+		
+	}
 	
 	
 	
