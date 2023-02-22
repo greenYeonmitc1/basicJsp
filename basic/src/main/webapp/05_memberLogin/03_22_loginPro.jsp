@@ -37,7 +37,10 @@
    
 	   <script> msgGo("로그인 실패" , "03_21_loginForm.jsp")</script>
 	   
-	   <% }else if(id.equals("admin")){   %>
+	   <% }else if(id.equals("admin")){  
+		   session.setAttribute("admin", "admin");
+		   
+		   %>
 	   
 	   <script> msgGo("관리자님이 로그인하셨습니다" , "01_11_adminMain.jsp")</script>
 

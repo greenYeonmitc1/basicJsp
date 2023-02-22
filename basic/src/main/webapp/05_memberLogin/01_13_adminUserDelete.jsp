@@ -5,15 +5,15 @@
     <% 
 
     String idx = request.getParameter("idx"); 
-    List<String> idList = new ArrayList<>((List<String>) session.getAttribute("idList"));
-    List<String> pwList = new ArrayList<>((List<String>) session.getAttribute("pwList"));
-    List<String> nameList = new ArrayList<>((List<String>) session.getAttribute("nameList"));
-    List<String> genderList = new ArrayList<>((List<String>) session.getAttribute("genderList"));
+    List<String> idList = (ArrayList<String>) session.getAttribute("idList");
+    List<String> pwList =(ArrayList<String>) session.getAttribute("pwList");
+    List<String> nameList = (ArrayList<String>) session.getAttribute("nameList");
+    List<String> genderList =(ArrayList<String>) session.getAttribute("genderList");
       
     %>
 
     <%
-      if(idx == null || (int)session.getAttribute("idx")!=0){
+      if(idx == null || session.getAttribute("admin")==null){
     	  %>
     	  <script>
     	     alert("잘못된 접근입니다");

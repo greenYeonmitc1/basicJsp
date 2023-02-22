@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    if(session.getAttribute("idx")== null){
-    	response.sendRedirect("02_main.jsp");
-    }else if((int)session.getAttribute("idx")!=0){
+    if(session.getAttribute("admin")==null){
     	response.sendRedirect("02_main.jsp");
     }
     %>
