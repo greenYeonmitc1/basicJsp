@@ -79,6 +79,18 @@ public class BoardDAO {
 	}
 	
 	
+	public void removeAllList() {
+		list.clear();
+	}
+	
+	public int removeABoard(int idx) {
+		if(idx < 0 || idx >= list.size()) {
+			return -1;
+		}
+		list.remove(idx);
+		return 1;
+	}
+	
 	
 	
 }

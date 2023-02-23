@@ -6,13 +6,14 @@
 <%
   String str = request.getParameter("index");
   int idx = 0;
-  if(str == null){
-	  response.sendRedirect("_00_main.jsp");
-  }else{
+  if(str != null){
 	  idx = Integer.parseInt(str);
   }
   BoardVO board = BoardDAO.getInstance().getABoard(idx);
-  if(board == null){
+  
+  if(str == null){
+	  response.sendRedirect("_00_main.jsp");
+  }else if(board == null ){
 	  response.sendRedirect("_00_main.jsp");
   }
   
