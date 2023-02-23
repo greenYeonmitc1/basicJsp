@@ -91,6 +91,58 @@ public class BoardDAO {
 		return 1;
 	}
 	
+	public ArrayList<BoardVO> getPageData(String curPageNo) {
+		ArrayList<BoardVO> showList = new ArrayList<BoardVO>();
+		int count = list.size();
+		int limit = 5;
+		int pageNo = 0;
+		if(curPageNo== null) {
+			pageNo =1;
+		}else {
+			pageNo = Integer.parseInt(curPageNo);
+		}
+		
+		int start = (pageNo-1)* limit;
+		int end = start + limit;
+		if(end > count) {
+			end = count;
+		}
+		// end 포함하면 안됨 index 이기 때문에 0~end 전까지 
+		for(int i = start; i <end;i++) {
+			showList.add(list.get(i));
+		}
+		
+		
+		return showList;
+		
+	}
+	
+	public int[] addPageNextBefore(String end) {
+	
+		int count = list.size();
+		int limit = 5;
+		int totalPageNum = count/ limit;
+		if(count%limit != 0 ) {
+			totalPageNum++;
+		}
+		int pageLimit = 3;
+		int startPage = 1;
+
+		if(end != null) {
+			startPage = Integer.parseInt(end);
+		}
+	
+		             // 3 + 3 => 6  -1    --->   3 4 5  
+		//               1 +3 => 4 -1 = 3 
+		int endPage = startPage + pageLimit -1;
+		if(endPage > totalPageNum) {
+			endPage = totalPageNum;
+		}
+		
+		int[] nums = {startPage, endPage, pageLimit,totalPageNum};
+		return nums;
+	}
+	
 	
 	
 }
