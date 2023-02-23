@@ -36,7 +36,7 @@ ArrayList<BoardVO> list = BoardDAO.getInstance().getAllList();
 			<td><%= vo.getRegDate() %></td>
 			<td><a href="_05_updateBoard.jsp?index=<%= idx %>"><%= vo.getSubject() %></a></td>
 			<td><%= vo.getContents() %></td>
-			<td><button onClick="window.location.href='_06_deleteBoardPro.jsp?index=<%= idx %>'">삭제하기</button></td>
+			<td><button onClick="location.href='_06_deleteBoardPro.jsp?index=<%= idx %>'">삭제하기</button></td>
 		</tr>
 	<%
 		idx++;
@@ -44,7 +44,7 @@ ArrayList<BoardVO> list = BoardDAO.getInstance().getAllList();
 	%>
 		<tr>
 			<td colspan="6">
-				<button onclick="window.location.href='_00_main.jsp'">메인화면</button>
+				<button onclick="location.href='_00_main.jsp'">메인화면</button>
 			</td>
 		</tr>
 	</table>

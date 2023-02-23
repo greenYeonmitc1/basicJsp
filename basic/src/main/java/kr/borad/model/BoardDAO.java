@@ -64,5 +64,21 @@ public class BoardDAO {
 		list.add(b);
 	}
 	
+	public BoardVO getABoard(int idx) {
+		if(idx < 0 || idx >= list.size()) {
+			return null;
+		}
+		return list.get(idx);
+	}
+	
+	public void updateBoard(int idx, String subject, String contents) {
+		BoardVO board = list.get(idx);
+		board.setSubject(subject);
+		board.setContents(contents);
+		
+	}
+	
+	
+	
 	
 }
