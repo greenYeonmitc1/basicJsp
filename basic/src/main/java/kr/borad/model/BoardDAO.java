@@ -54,5 +54,15 @@ public class BoardDAO {
 		}
 	}
 	
+	public void addBoardList(String writer, String subject,String contents) {
+		BoardVO b = new BoardVO();
+		b.setNo(getMaxNo()+1);
+		b.setWriter(writer);
+		b.setSubject(subject);
+		b.setContents(contents);
+		b.setRegDate(""+LocalDate.now());
+		list.add(b);
+	}
+	
 	
 }
