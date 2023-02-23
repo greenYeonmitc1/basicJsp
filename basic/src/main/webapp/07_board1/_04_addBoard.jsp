@@ -1,5 +1,8 @@
+<%@page import="kr.borad.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<% int num = BoardDAO.getInstance().getMaxNo();%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
 		<table border="1">
 			<tr>
 				<th>번호</th>
-				<td>1</td>
+				<td><%= num %></td>
 			</tr>
 			<tr>
 				<th>작성자</th>
@@ -21,7 +24,7 @@
 			</tr>
 			<tr>
 				<th>제목</th>
-				<td><input type="text" name="subject"></td>
+				<td><input type="text" id="subject" name="subject"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
@@ -31,11 +34,49 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="작성완료">
+					<input type="button" value="작성완료" onclick="checkForm(form)">
 				</td>
 			</tr>
 		</table>
 	</form>
+	
+	<script>
+		
+		function checkForm(form){
+			let writer = document.querySelector('input[name="writer"]'); // form.writer
+			let subject = document.querySelector('#subject'); // form.subject
+			let contents = form.contents; // 외부에서 넘어온 form 태그안에 이름이 contents 태그 객체 가져옴 
+			if(checkValue(writer)) return;
+			if(checkValue(subject)) return;
+			if(checkValue(contents)) return;
+			
+			form.submit();
+			
+			
+			/*
+			if(writer.value.trim().length == 0){
+				alert('값이 비워져있으면 안됩니다');
+				writer.focus();
+				return;
+			}
+			if(subject.value.trim().length == 0){
+				alert('값이 비워져있으면 안됩니다');
+				subject.focus();
+				return;
+			}
+			*/
+		}
+		
+		function checkValue(tag){
+			let value = tag.value.trim();
+			if(value.length==0){
+				alert('값이 비워져있으면 안됩니다');
+				tag.focus();
+				return true;
+			}
+			return false;
+		}
+	</script>
 </body>
 </html>
 
