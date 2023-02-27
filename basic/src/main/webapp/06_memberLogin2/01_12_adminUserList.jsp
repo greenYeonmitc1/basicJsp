@@ -12,14 +12,10 @@
     ArrayList<MemberVO> list = MemberDAO.getInstance().getAllMemberList();
     
     %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+
+
+<%@ include file="header.jsp" %>
+
  <h1> 관리자 페이지(회원정보 확인하기)</h1>
   <div> <a href="02_main.jsp"> 메인 화면 가기 </a></div>
   <br>

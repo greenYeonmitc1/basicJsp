@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 *{
 
 	text-align: center;
@@ -9,15 +8,15 @@ html, body {
    width: 100%;
    height: 100%;
 } 
-bod
          
 header{
 	background: pink;
+	opacity: 0.8;
 	font-size:18px;
 	font-weight: 600;
 }
 
-header div:hover{
+header div :hover{
 
 	background: gray;
 	color: white;
@@ -28,3 +27,22 @@ header div:hover{
 input {
 	text-align: left;
 }
+
+#pink{
+	background-color:pink;
+	text-decoration: none;
+	color:white ;
+	border-color: pink;
+}
+
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+
+tr{
+	border: 1px solid black;
+}
+
