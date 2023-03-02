@@ -20,8 +20,8 @@
     
             
          <c:if test="${log eq null}">
-            <div class="w-25 py-3" onclick="location.href='member/memberInsert.jsp'"> 회원가입 </div>
-            <div class="w-25 py-3"  onclick="location.href='member/memberLogin.jsp'"> 로그인 </div>
+            <div class="w-25 py-3" onclick="location.href='${ctx}/member/memberInsert.jsp'"> 회원가입 </div>
+            <div class="w-25 py-3"  onclick="location.href='${ctx}/member/memberLogin.jsp'"> 로그인 </div>
           </c:if>
        <c:if test="${log ne null}">
                     <div class="w-25 py-3" onclick="location.href='${ctx}/memberContent.do?num=${log}'"> 내정보 </div>
