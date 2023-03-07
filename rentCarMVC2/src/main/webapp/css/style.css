@@ -1,0 +1,30 @@
+@charset "UTF-8";
+*{
+
+	box-sizing: border-box;
+	text-align: center;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex: 1;
+}
+
+table{
+	width:100%;
+	height: 100%;
+}
+
+.right{
+	text-align: right;
+}
