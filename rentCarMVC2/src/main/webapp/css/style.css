@@ -18,6 +18,7 @@ body {
 
 section {
   flex: 1;
+  margin-top: 30px;
 }
 
 table{
@@ -28,3 +29,21 @@ table{
 .right{
 	text-align: right;
 }
+
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+   height:80%;
+}
+
+#inputImg{
+	display:block;
+	width:100%;
+	height:auto;
+	object-fit: contain;
+}
+
+
+

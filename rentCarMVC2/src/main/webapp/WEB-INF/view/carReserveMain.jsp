@@ -15,7 +15,7 @@
       <c:forEach var="vo" items="${list}">
 	
 			<td width="333" align="center">
-			<a href="main.do?center=carReserveInfo.do">
+			<a href="carReserveInfo.do?no=${vo.no}">
 				<img alt="" src="img/${vo.img}" width="300" height="220">
 			</a><p>
 			차량명 :${vo.name}

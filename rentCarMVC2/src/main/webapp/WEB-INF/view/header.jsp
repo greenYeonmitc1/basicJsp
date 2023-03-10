@@ -37,7 +37,7 @@
 				style="text-decoration: none">예 약 확 인</a></font>
 			</td>
 			<td align="center" width="200" bgcolor="pink">
-				<font color="white" size="5"><a href="#" style="text-decoration: none">자유게시판</a></font>
+				<font color="white" size="5"><a href="main.do?center=registerCar" style="text-decoration: none">차 량 등 록</a></font>
 			</td>
 			<td align="center" width="200" bgcolor="pink">
 				<font color="white" size="5"><a href="#" style="text-decoration: none">이  벤  트</a></font>

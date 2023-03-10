@@ -16,7 +16,7 @@ import com.rentcar.test.controller.Controller;
 @WebServlet("*.do")
 public class RentcarFrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		request.setCharacterEncoding("utf-8");
 		String url=request.getRequestURI();
 		System.out.println("url=" + url); 
@@ -33,7 +33,7 @@ public class RentcarFrontController extends HttpServlet {
 	
 		if(nextPage!=null) {
 			if(nextPage.indexOf("redirect:")!=-1) {
-				response.sendRedirect(nextPage.split(":")[1]); 
+				response.sendRedirect( ctx+ nextPage.split(":")[1]); 
 			}else {
 				RequestDispatcher rd=request.getRequestDispatcher(ViewResolver.makeView(nextPage)); 
 				rd.forward(request, response);
